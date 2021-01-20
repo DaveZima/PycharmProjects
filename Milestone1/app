@@ -1,0 +1,191 @@
+
+
+###########
+# Imports #
+###########
+
+import os
+import json
+
+# Initialize empty list of dictionaries
+
+movies = [{}]
+
+
+movies2 = [{}]
+#movies2 = dict.fromkeys(['name','director','year'])
+
+
+'''
+movies = [ { 'name':'Matrix', 'director':'Wachowskis', 'year':'1999'},
+           { 'name':'Star Wars', 'director':'Lucas', 'year':'1977'},
+           { 'name':'The God Father', 'director':'Coppola', 'year':'1972'} ]
+'''
+search_menu_list = ['Search by name','Search by director','Search by year','Exit search']
+
+main_menu_list = ['Find a movie','Add a movie','List all movies','Exit program' ]
+
+
+#############
+# functions #
+#############
+
+#------------------------------------------------------------------------------------#
+def press_anykey( prompt='Press any key to continue ?' ):
+
+    print('')
+    anykey = input(prompt)
+    print('')
+
+#------------------------------------------------------------------------------------#
+def enter_field( prompt ):
+
+    field_value = ''
+    while not field_value.strip():
+       field_value = input( prompt )
+    print('')
+
+    return field_value
+
+#------------------------------------------------------------------------a-----------#
+def save_database():
+
+    db_file = open('movie_database.json', 'w')
+    json.dump(movies, db_file)
+    db_file.close()
+
+#------------------------------------------------------------------------------------#
+def read_database():
+
+    exists = os.path.isfile('movie_database.json')
+    if exists:
+        db_file = open('movie_database.json', 'r' )
+        movies = json.loads(db_file.read())
+        db_file.close()
+
+#------------------------------------------------------------------------------------#
+def exit_early():
+
+    print('Exiting program early')
+    raise SystemExit
+
+#------------------------------------------------------------------------------------#
+def find_movie( search_key, search_value ):
+
+    movie_rec = list( filter( lambda movies: movies[ search_key ] == search_value, movies ) )
+
+    return movie_rec
+
+#------------------------------------------------------------------------------------#
+def list_movie_database():
+
+    if len(movies) > 1:
+        print('')
+        print('**************** Movie Database *****************')
+        print('')
+        print('Movie                    Director                 Year')
+        print('------------------------ ------------------------ ----')
+        for m in movies:
+            if len(m) != 0:
+                print( '%-24.24s %-24.24s %-4.4s' % ( m['name'], m['director'], m['year'] ) )
+        press_anykey()
+    else:
+        press_anykey('There are no movies in the database')
+
+#------------------------------------------------------------------------------------#
+def add_movie():
+
+    print('')
+    movie_name = enter_field('Enter movie name ?')
+    director_name = enter_field('Enter director name ?')
+    movie_year = enter_field('Enter year ?')
+
+    new_rec = dict(name=movie_name, director=director_name, year=movie_year )
+    movies.append(new_rec)
+
+#------------------------------------------------------------------------------------#
+def clear_screen():
+    print('\n' * 24)  # prints 80 line breaks
+
+#------------------------------------------------------------------------------------#
+def print_menu( title, menu_list):
+
+    clear_screen()
+    print(f'***** {title} *****')
+    print('')
+    for i in range(len(menu_list)):
+        print('{0}. {1}'.format(i+1, menu_list[i]))
+
+#------------------------------------------------------------------------------------#
+def search_menu():
+
+    if len(movies) > 1:
+        choice = 'X'
+        while choice != '4':
+            print_menu('Search Menu', search_menu_list)
+            choice = input('Enter a number: ?')
+            if choice == '1':
+                search_key = 'name'
+                search_value = input('Enter movie name ?')
+                movie_list = find_movie(search_key, search_value)
+                print(movie_list)
+                press_anykey()
+            elif choice == '2':
+                press_anykey('Search by director')
+            elif choice == '3':
+                press_anykey('Search by year')
+            elif choice == '4':
+                return
+            else:
+                print('Incorrect choice "{0}"'.format(choice))
+                print('')
+                press_anykey('Please enter a number between 1 and 4')
+    else:
+        press_anykey('There are no movies in the database')
+
+#------------------------------------------------------------------------------------#
+def main_menu():
+
+    choice = 'X'
+    while choice != '4':
+        print_menu('Main Menu', main_menu_list)
+        choice = input('Enter a number: ?')
+        if choice == '1':
+            search_menu()
+        elif choice == '2':
+            add_movie()
+        elif choice == '3':
+            list_movie_database()
+        elif choice == '4':
+            pass
+        else:
+            print('Incorrect choice "{0}"'.format(choice))
+            print('')
+            print('Please enter a number between 1 and 4')
+            press_anykey()
+
+########
+# main #
+########
+
+print('The Complete Python Course - Milestone Project 1')
+
+'''
+new_rec = dict(name='movie_name', director='director_name', year='1957')
+movies2.append(new_rec)
+
+l2 = len(movies2[1])
+print(f'length = {l2}')
+print(movies2)
+'''
+
+read_database()
+
+'''
+print(movies)
+exit_early()
+'''
+
+main_menu()
+
+save_database()

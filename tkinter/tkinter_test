@@ -1,0 +1,60 @@
+import os
+import sys
+from tkinter import *
+
+window = None
+
+def center_window(w=300, h=200):
+
+   global window
+
+   # get screen width and height
+   ws = window.winfo_screenwidth()
+   hs = window.winfo_screenheight()
+   # calculate position x, y
+   x = (ws/2) - (w/2)
+   y = (hs/2) - (h/2)
+   window.geometry('%dx%d+%d+%d' % (w, h, x, y))
+
+
+# key down function
+def click():
+   entered_text=textentry.get()
+   output.delete(0.0, END)
+   try:
+      definition = my_dict[entered_text]
+   except:
+      definition = "Sorry Charlie"
+   output.insert(END, definition)
+
+# main
+window = Tk()
+window.title("  ODS Branch List  ")
+center_window(600,400)
+
+# create label
+Label(window,text = "Enter a branch: ",font="none 11").grid(row=5,column=0,sticky=W)
+
+# create a text entry box
+textentry = Entry(window,width=5,bg="white")
+textentry.grid(row=5,column=20,sticky=W)
+
+# add a submit button
+Button(window, text="SUBMIT", width=6,command=click).grid(row=50,column=0,sticky=W)
+
+# create another label
+Label(window,text="\nDefinition:",font="none 11").grid(row=6,column=0,sticky=W)
+
+# create a text box
+output = Text(window,width=30,height=4,wrap=WORD)
+output.grid(row=15,column=0,columnspan=2,sticky=W)
+
+# the dictionary
+my_dict = {
+   "algo":"Bubble Sort","bug":"bzzzz"
+}
+
+# run the main loop
+
+window.mainloop()
+

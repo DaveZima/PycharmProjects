@@ -1,0 +1,75 @@
+
+#------------------------------------------------------------------------------------#
+def find_movie_test( search_key, search_value ):
+
+    movie_rec = list(filter( lambda movies: movies[ search_key ] == search_value, movies ))
+#    movie_index = movies.index({'name': 'Star Wars', 'director': 'Lucas'})
+    movie_index = movies.index(movie_rec[0])
+    print('movie_index = {0}'.format(movie_index))
+    print('movie_rec = {0}'.format(movie_rec))
+
+
+
+
+1. {
+'name': 'The Matrix',
+'director': 'Wachowskis',
+'year': '1994'
+}
+2. add, view all, find on any attribute
+3. store and restore from file
+
+
+Page 1
+Milestone project
+Movie Project Brief
+Your task
+Your task, should you choose to accept it...
+Is to create a movie storage application, that will allow users to manage their movie collection
+and find any movie they want.
+Here’s the three main features:
+• First, the application must allow to add new movies to the collection;
+• The application must allow users to view all the movies in their collection;
+• The application must also allow users to find any particular movie by any of its attributes
+(more info in the next page...)
+The Complete Python Course — Udemy
+Page 2
+Milestone Project 1: Movie Project
+What are movies?
+Movies will be dictionaries, but you can define the structure of the dictionary to be anything
+you like. For example, you may choose to have movies as dictionaries with only three keys:
+{
+'name': 'The Matrix',
+'director': 'Wachowskis',
+'year': '1994'
+}
+Or you may choose to have more keys (in the example below, also including which shelf and
+location the movie is in):
+{
+'name': 'The Matrix',
+'director': 'Wachowskis',
+'year': '1994',
+'location': '3F-14',
+'shelf': '3F'
+}
+Where will movies be stored?
+It’s up to you where movies will be stored, as long as you can then print them, retrieve them,
+and find them. A good potential structure could be a list. If you are familiar with files and
+storing things in files, go for that!
+What’s that about finding movies?
+Once you have the movie structure defined, users should be able to e.g. “find all movies released
+in 1994”. Or, “find all movies by director Rolf Smith”.
+That means the user must be able to tell you what property they are looking for (is it year ,
+director , or something else); and also they must be able to tell you what they’re looking for
+( 1994 , or Rolf Smith in the examples above).
+With both the property and the value, you’ll be able to find all movies which match both. It’s
+tricky! Spend some time, and I’m sure you’ll get it.
+Page 3
+https://tecladocode.com/blog
+The Complete Python Course — Udemy
+Stuck?
+If you are ever stuck, ask away in the Course Q&A and we’ll be glad to help you. Or, check
+out the next few videos for how we’ve implemented all this stuff. That’s a great way to review
+your code and also learn a thing or two as we code live right in front of you.
+Good luck! Let us know how you got on with the project!
+- Jose and the Teclado team.
