@@ -13,113 +13,6 @@ from pandas_datareader import data
 
 JOB_NAME = None
 
-
-
-
-
-
-def log_msg(catg,msg):
-
-    cur = dt.datetime.now()
-    cur_str = cur.strftime("%Y-%m-%d %H:%M:%S")
-    print("%s %s: %s" % (cur_str,catg,msg))
-
-def show_obj(obj):
-    t = type(obj)
-    p = dir(obj)
-    print("***************")
-    print("* Object Type *")
-    print("***************")
-    print(t)
-    print("*********************")
-    print("* Object Properties *")
-    print("*********************")
-    print(p)
-    print("")
-
-########
-# main #
-########
-
-# Get program name
-tmp_list = sys.argv[0].split("/")
-JOB_NAME = tmp_list[len(tmp_list) - 1]
-
-log_msg("INFO","%s starting" % (JOB_NAME))
-
-tick_obj = yf.Ticker("TSLA")
-
-# Ticker.history() parameters
-# period: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
-# interval: 1m,2m,5m,15m,30m,60m,90m,1h,1d,5d,1wk,1mo,3mo
-# start: YYYY-MM-DD datetime (if not using period)
-# end: YYYY-MM-DD datetime (if not using period)
-# prepost: Include Pre and Post regular market data in results? (Default is False)
-# auto_adjust: Adjust all OHLC (Open/High/Low/Close prices) automatically? (Default is True)
-# actions: Download stock dividends and stock splits events? (Default is True)
-log_msg("INFO","Initializing the Ticker object history data")
-tick_hist = tick_obj.history(period="max")
-
-
-# Determine len and range of data
-# shape[0] = number of rows and shape[1] = number of columns
-l = len(tick_hist)
-r = range(tick_hist.shape[0])
-log_msg("INFO","DataFrame cols = %d rows = %d" % (tick_hist.shape[1],tick_hist.shape[0]))
-
-col_names = []
-for l in tick_hist.columns:
-    col_names.append(l)
-
-# Indices
-
-data_top = tick_hist.head()
-min_date = data_top.index[0]
-
-data_bot = tick_hist.tail()
-max_date = data_bot.index[len(data_bot.index) - 1]
-
-x = dt.datetime(2020, 5, 17)
-
-print("min_date: ")
-print(min_date)
-print("max_date: ")
-print(max_date)
-
-# Pandas replacement for python datetime.datetime object
-# Different assignments
-
-td = pd.Timestamp('2010-06-29 00:00:00')
-td = pd.Timestamp(2010, 6, 29)
-td = pd.Timestamp(year=2010, month=6, day=29)
-
-
-# Define year trading day start and stop
-
-
-
-# 2012-01-02
-# MSFT max range = 1986-03-13 2021-01-19
-# Good choice to validate year start and end
-# list of dictionaries year = 2012, start = pd.Timestamp, end = pd.Timestamp
-tick_obj_test = yf.Ticker("MSFT")
-# tick_hist_test = tick_obj_test.history(interval="1d",start="2012-01-01",end="2012-01-07")
-
-start_ts = pd.Timestamp(2012, 1, 1)
-end_ts = pd.Timestamp(2012, 1, 7)
-
-# end is less than.  need 1,3 and 1,4 to give you 1,3
-
-start_ts = pd.Timestamp(2021, 1, 1)
-end_ts = pd.Timestamp(2021, 1, 7)
-tick_hist_test = tick_obj_test.history(start=start_ts,end=end_ts)
-print(tick_hist_test)
-
-start_ts = pd.Timestamp(2021, 12, 24)
-end_ts = pd.Timestamp(2021, 12, 31)
-tick_hist_test = tick_obj_test.history(start=start_ts,end=end_ts)
-print(tick_hist_test)
-
 YEAR_PERIODS = [
     {"year": 2012, "year_start": pd.Timestamp(2012,1,3), "year_end": pd.Timestamp(2012,12,28)},
     {"year": 2013, "year_start": pd.Timestamp(2013,1,2), "year_end": pd.Timestamp(2013,12,30)},
@@ -133,43 +26,120 @@ YEAR_PERIODS = [
     {"year": 2021, "year_start": pd.Timestamp(2021,1,4), "year_end": pd.Timestamp(2021,12,28)}
 ]
 
-now_ts = pd.Timestamp.now()
-print("now_ts")
-print(now_ts)
+TRAILING_RETURNS = []
+# {"year": 2012, "year_start": pd.Timestamp(2012, 1, 3), "year_start_price": 233.25,
+#  "year_end": pd.Timestamp(2012, 12, 28) "year_end_price": 400.15 }
 
 
-# Build year_dates
-# Another year_data ticker = , year_start = , year_start_price, year_end = , year_end_price =
+#---------------------------------------------------------------------------------------#
+def log_msg(catg,msg):
 
-# tick_hist_test = tick_obj_test.history(period="max")
+    cur = dt.datetime.now()
+    cur_str = cur.strftime("%Y-%m-%d %H:%M:%S")
+    print("%s %s: %s" % (cur_str,catg,msg))
 
+#---------------------------------------------------------------------------------------#
+def show_obj(obj):
+    t = type(obj)
+    p = dir(obj)
+    print("***************")
+    print("* Object Type *")
+    print("***************")
+    print(t)
+    print("*********************")
+    print("* Object Properties *")
+    print("*********************")
+    print(p)
+    print("")
 
+# ---------------------------------------------------------------------------------------#
+def current_year():
 
-"""
-Set a 10 year time window but accommodate any min year
-Best to create a dataframe
-Show trailing returns (year_end - year_start) / year_end
-Look for a master list of symbols (NASDAQ)
-Start with a simple csv that can be imported into Google Sheets
-Should be able to easily handle tens of thousands
-Project is Target Finder
-Good intro in to capturing financial data and pandas in python
-Need to capture 2011 to 2021 start and end dates
-Use sorting and filtering in Google Sheets to start
-Maybe this is a start to an investing model
-"""
+    return int(str(dt.date.today())[:4])
 
-# df.head(n) tail(n) creates a df with a subset of rows
+#---------------------------------------------------------------------------------------#
+def current_week():
 
-x = tick_hist.iloc[0,1]
-# print("[0,0]")
-# print(x)
+    now_dt = dt.datetime.combine(dt.date.today(), dt.datetime.min.time())
+    start_dt = now_dt - dt.timedelta(days=now_dt.weekday()+1)
+    end_dt = start_dt + dt.timedelta(days=6)
+#    log_msg("DEBG","now_dt=%s start_dt=%s end_dt=%s" % (now_dt,start_dt,end_dt))
 
-# type() = class  dir() = attributes getattr() = get attribute value (dataframe?)
+    return start_dt, end_dt
 
+#---------------------------------------------------------------------------------------#
+def validate_year_periods():
 
-# Determine the min max dates
+    log_msg("INFO","Validating year periods")
 
+    current_yr = current_year()
+
+    for p in YEAR_PERIODS:
+
+        year = p["year"]
+        year_start = p["year_start"]
+        year_end = p["year_end"]
+        log_msg("INFO","Validating %d start=%s end=%s" % (year,year_start,year_end))
+
+        # Create a MSFT yfinance ticker object. Microsoft started issuing stock in the 1980s
+        # which makes it good stock to test our 2012-2021 period.
+
+        tick_obj = yf.Ticker("MSFT")
+
+        ###########################
+        # Capture year_start data #
+        ###########################
+
+        start_ts = pd.Timestamp(year, 1, 1)
+        end_ts = pd.Timestamp(year, 1, 7)
+        tick_hist = tick_obj.history(start=start_ts, end=end_ts)
+        if tick_hist.empty:
+            log_msg("EROR","Period start dataframe is empty")
+            raise SystemExit(1)
+
+        # Trading Date is the index of the Ticker.History() DataFrame
+        # year_start, year_start_close
+
+        data_top = tick_hist.head()
+        year_start = data_top.index[0]
+        print("*** year_start ***")
+        print(year_start)
+        print("*** year_start DataFrame ***")
+        print(tick_hist)
+
+        #########################
+        # Capture year_end data #
+        #########################
+
+        if year == current_yr:
+            start_ts, end_ts = current_week()
+        else:
+            start_ts = pd.Timestamp(year, 12, 24)
+            end_ts = pd.Timestamp(year, 12, 31)
+
+        tick_hist = tick_obj.history(start=start_ts, end=end_ts)
+        if tick_hist.empty:
+            log_msg("EROR","Period end dataframe is empty")
+            raise SystemExit(1)
+
+        if year == current_yr:
+            log_msg("DEBG","start_ts=%s end_ts=%s" % (start_ts,end_ts))
+            print(tick_hist)
+
+########
+# main #
+########
+
+# Get program name
+tmp_list = sys.argv[0].split("/")
+JOB_NAME = tmp_list[len(tmp_list) - 1]
+
+log_msg("INFO","%s starting" % (JOB_NAME))
+log_msg("INFO","Current year = %d" % (current_year()))
+
+validate_year_periods()
+
+raise SystemExit(0)
 
 
 
