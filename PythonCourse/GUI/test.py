@@ -1,0 +1,7 @@
+import tkinter
+
+tkinter.test()
+
+
+
+

@@ -1,42 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bc42f44-ae55-4741-87c7-15d9a6c6d001" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="9bc42f44-ae55-4741-87c7-15d9a6c6d001" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Concurrency/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/.idea/Concurrency.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/generators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/non_locked_threads.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Concurrency/threads.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/API/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/API/libs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/API/libs/openexchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Decorators/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/ConvertCSVtoJSON.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/addition.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/collection_exercise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/importing_modules_exercise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/inheritance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/prime_num_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Exercises/regex_exercise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Flask/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Flask/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Flask/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Flask/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Flask/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Flask/templates/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/GUI/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/locators/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/locators/quote_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/locators/quote_page_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/pages/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/pages/quotes_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/parsers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/parsers/quote.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/scraping_books.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/HTML/simple_html.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/abc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/flight.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/saveable.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/store.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/OOP/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/Study/study.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/milestone_2_database/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/milestone_2_database/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/milestone_2_database/utils/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonCourse/template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/.idea/Selenium.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/Pipfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/Pipfile.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/locators/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/locators/quote_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/locators/quotes_page_locators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/pages/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/pages/quotes_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/parsers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Selenium/parsers/quote.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yfinance/.idea/dictionaries/davez_000.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonCourse/.idea/PythonCourse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonCourse/.idea/PythonCourse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonCourse/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonCourse/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonCourse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonCourse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonCourse/New Text Document.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonCourse/python_course.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonCourse/python_course.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonCourse/test37.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonCourse/test37.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tkinter_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/tkinter_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yfinance/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yfinance/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yfinance/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../yfinance/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yfinance/yfinance_notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../yfinance/yfinance_notes.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkinter_test">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tkinter_menu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>output</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -51,6 +115,10 @@
     <option name="x" value="804" />
     <option name="width" value="1123" />
     <option name="height" value="1047" />
+  </component>
+  <component name="ProjectId" id="1umcVKQcqzeRugVBdSp2PBsVqRq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -80,24 +148,18 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.tkinter_menu">
-    <configuration name="tkinter_menu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.tkinter">
+    <configuration name="tkinter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,7 +171,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tkinter_menu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -139,12 +201,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.tkinter_test" />
+      <item itemvalue="Python.tkinter" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tkinter_menu" />
+        <item itemvalue="Python.tkinter" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>

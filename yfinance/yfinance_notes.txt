@@ -1,4 +1,28 @@
 
+            tick_obj = yf.Ticker(d_ticker)
+            # history(end=) is non-inclusive so add one to the end date to ensure it will be included in the dataframe
+            year_end_adj = d_year_end + dt.timedelta(days=1)
+            tick_hist = tick_obj.history(start=d_year_start, end=year_end_adj)
+
+            if tick_hist.empty:
+
+                log_msg("WARN","Ticker %s: missing or incomplete data for %d" % (d_ticker,d_year))
+
+            else:
+
+                # Validate dataframe year_start and year_end rows
+
+                data_top = tick_hist.head()
+                df_year_start = data_top.index[0]
+                if df_year_start != d_year_start:
+                    log_msg("EROR", "%s dataframe year start %s does not match period year start %s" % (
+                    d_ticker, df_year_start, d_year_start))
+                    raise SystemExit(1)
+
+                d_year_start_price = tick_hist.iloc[0, 3]
+
+
+
 tick_obj = yf.Ticker("TSLA")
 
 
